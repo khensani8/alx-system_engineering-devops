@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script stops the "4-to_infinity_and_beyond" process
+
+# Replace with the actual process name or command
+process_name="4-to_infinity_and_beyond"
+
+# Use pkill to stop the process
+pkill -x "$process_name"
+
+# Check if the process was terminated
+if [ $? -eq 0 ]; then
+    echo "Stopped process $process_name."
+else
+    echo "Process $process_name not found or could not be stopped."
+fi
