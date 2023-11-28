@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Install Nginx and configure it to listen on port 80
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo 'Hello World!' | sudo tee /var/www/html/index.html > /dev/null
+sudo service nginx start
+# Configure Nginx for the redirection
+sudo tee /etc/nginx/sites-available/redirect_me > /dev/null <<EOL
+server {
+    listen 80;
+    server_name _;
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+
+    # Additional server configurations if needed
+}
+EOL
+
+# Create a symbolic link to enable the redirection site
+sudo ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
+
+# Restart Nginx to apply the changes
+sudo service nginx restart
