@@ -24,3 +24,4 @@ sudo ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
 
 # Restart Nginx to apply the changes
 sudo service nginx restart
+
