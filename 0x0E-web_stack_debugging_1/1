@@ -1,0 +1,10 @@
+sed: 1: "/etc/nginx/nginx.conf": extra characters at the end of n command
+sed: 1: "/etc/nginx/nginx.conf": extra characters at the end of n command
+sed: 1: "/etc/nginx/sites-availa ...": extra characters at the end of n command
+sed: 1: "/etc/nginx/sites-availa ...": extra characters at the end of n command
+chmod: /etc/nginx/nginx.conf: No such file or directory
+chmod: /etc/nginx/nginx.conf: No such file or directory
+sudo: sudo: unknown user: nginx
+sudo: error initializing audit plugin sudoers_audit
+unknown user: nginx
+sudo: error initializing audit plugin sudoers_audit
