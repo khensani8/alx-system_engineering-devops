@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
+#script that will display information about subdomains
 
 domain=$1
 subdomain=$2
 
 if [ -z "$subdomain" ]
 then
-    query_dns "www" "$domain"
-    query_dns "lb-01" "$domain"
-    query_dns "web-01" "$domain"
-    query_dns "web-02" "$domain"
+    domain_information "www" "$domain"
+    domian_information "lb-01" "$domain"
+    domain_information "web-01" "$domain"
+    domain_information "web-02" "$domain"
 else
-    query_dns "$subdomain" "$domain"
+    domain_information "$subdomain" "$domain"
 fi
