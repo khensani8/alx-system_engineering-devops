@@ -1,0 +1,30 @@
+Title: Journey Behind the URL: What Happens When You Type https://www.google.com and Press Enter?
+
+When you type "https://www.google.com" into your browser and hit Enter, a complex sequence of events is triggered, involving various layers of technology working seamlessly to deliver the requested webpage. In this blog post, we'll unravel the intricacies of this journey, exploring the role of DNS requests, TCP/IP, firewalls, HTTPS/SSL, load-balancers, web servers, application servers, and databases.
+
+1. DNS Request:
+The journey begins with the Domain Name System (DNS) resolution. Your browser sends a Domain Name System (DNS) request to translate the human-readable "www.google.com" into an IP address. DNS servers around the world collaborate to provide this translation, helping your browser locate the correct server on the internet.
+
+2. TCP/IP:
+Once the correct IP address is obtained, a Transmission Control Protocol (TCP) connection is established. TCP, a fundamental part of the Internet Protocol (IP) suite, ensures reliable and ordered delivery of data between your computer and the server. It breaks down the data into packets, numbers them for proper sequencing, and manages their reassembly at the destination.
+
+3. Firewall:
+As the data packets travel across the internet, they may encounter firewalls – security barriers that monitor and control incoming and outgoing network traffic based on predetermined security rules. Firewalls act as a line of defense, protecting both the user's device and the server from potential threats.
+
+4. HTTPS/SSL:
+The next layer of security is provided by Hypertext Transfer Protocol Secure (HTTPS) and its encryption protocol, Secure Sockets Layer (SSL) or Transport Layer Security (TLS). This ensures that the data exchanged between your browser and the server remains confidential and secure. It prevents eavesdropping and man-in-the-middle attacks by encrypting the communication.
+
+5. Load-Balancer:
+In many cases, especially for high-traffic websites like Google, multiple servers are employed to distribute the load efficiently. Load-balancers act as traffic managers, distributing incoming requests among these servers. This ensures optimal resource utilization, improves response times, and enhances the overall user experience.
+
+6. Web Server:
+The load-balancer directs the request to one of Google's many web servers. The web server's primary function is to handle HTTP requests, serving static content or forwarding dynamic requests to the appropriate application server.
+
+7. Application Server:
+Behind the scenes, application servers process more complex tasks, executing server-side code and interacting with databases. For Google, these servers handle the intricate algorithms and functionalities that power the search engine, personalized services, and other features.
+
+8. Database:
+The final stop in our journey is the database, where the requested information is stored. In the case of Google, this could include indexed web pages, user data, and other relevant information. The application server retrieves the necessary data and sends it back to the web server.
+
+The seemingly simple act of typing "https://www.google.com" and pressing Enter triggers a remarkable journey across the digital landscape. The cooperation of DNS, TCP/IP, firewalls, HTTPS/SSL, load-balancers, web servers, application servers, and databases ensures a seamless and secure experience for users, highlighting the sophistication of the infrastructure that underpins the modern internet.
+#TechBehindTheWeb #InternetInfrastructure #DigitalJourney
