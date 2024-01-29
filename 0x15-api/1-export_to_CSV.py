@@ -1,33 +1,29 @@
 #!/usr/bin/python3
 """ Script that uses JSONPlaceholder API to get information about employee """
-import requests
+import riequests
+import csv
 import sys
-
 
 def get_employee_todo_progress(employee_id):
     try:
-        """Fetch user information"""
         user_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
         user_response = requests.get(user_url)
         user_data = user_response.json()
         employee_name = user_data.get('name')
 
-        """Fetch tasks information"""
         tasks_url = f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
         tasks_response = requests.get(tasks_url)
         tasks_data = tasks_response.json()
 
-        """Count completed tasks"""
-        completed_tasks = [task for task in tasks_data if task.get('completed')]
-        num_completed_tasks = len(completed_tasks)
-        total_tasks = len(tasks_data)
+        csv_filename = f'{employee_id}.csv'
+        with open(csv_filename, mode='w', newline='') as csv_file:
+            csv_writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
+            csv_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
 
-        """Display progress information"""
-        print(f"Employee {employee_name} is done with tasks({num_completed_tasks}/{total_tasks}):")
-        
-        """Display titles of completed tasks"""
-        for task in completed_tasks:
-            print(f"{' ' * 5}{task.get('title')}")
+            for task in tasks_data:
+                csv_writer.writerow([employee_id, employee_name, task.get('completed'), task.get('title')])
+
+        print(f"Data exported to {csv_filename}")
 
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
